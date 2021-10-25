@@ -35,7 +35,7 @@ contract MyEpicGame is ERC721 {
     uint[] memory characterHp,
     uint[] memory characterAttackDmg
   )
-    ERC721("Metaverse Allies", "ALLY")
+    ERC721("Pilgrims", "PILGRIM")
   {
     for(uint i = 0; i < characterNames.length; i += 1){
       defaultCharacters.push(CharacterAttributes({
