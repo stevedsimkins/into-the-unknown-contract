@@ -20,6 +20,16 @@ contract MyEpicGame is ERC721 {
     uint attackDamage;
   }
 
+  struct BigBoss {
+    string name;
+    string imageURI;
+    uint hp;
+    uint maxHp;
+    uint attackDamage;
+  }
+
+  BigBoss public bigBoss;
+
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
@@ -29,14 +39,30 @@ contract MyEpicGame is ERC721 {
 
   mapping(address => uint256) public nftHolders;
 
+
   constructor(
     string[] memory characterNames,
     string[] memory characterImageURIs,
     uint[] memory characterHp,
-    uint[] memory characterAttackDmg
+    uint[] memory characterAttackDmg,
+    string memory bossName,
+    string memory bossImageURI,
+    uint bossHp,
+    uint bossAttackDamage
   )
     ERC721("Pilgrims", "PILGRIM")
   {
+
+    bigBoss = BigBoss({
+      name: bossName,
+      imageURI: bossImageURI,
+      hp: bossHp,
+      maxHp: bossHp,
+      attackDamage: bossAttackDamage
+    });
+
+    console.log("Done initializing boss %s w/ HP %s, img %s", bigBoss.name, bigBoss.hp, bigBoss.imageURI);
+
     for(uint i = 0; i < characterNames.length; i += 1){
       defaultCharacters.push(CharacterAttributes({
         characterIndex: i, 
@@ -104,5 +130,12 @@ contract MyEpicGame is ERC721 {
     );
 
     return output;
+  }
+
+  function attackBoss() public {
+    uint256 nftTokenIdOfPlayer = nftHolders[msg.sender];
+    CharacterAttributes storage player = nftHolderAttributes[nftTokenIdOfPlayer];
+    console.log("\nPlayer w/ character %s abut to attack. Has %s HP and %s AD", player.name, player.hp, player.attackDamage);
+    console.log("Boss %s has %s HP and %s AD", bigBoss.name, bigBoss.hp, bigBoss.attackDamage);
   }
 }
