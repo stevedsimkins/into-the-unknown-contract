@@ -6,7 +6,7 @@ const main = async () => {
       "https://i.pinimg.com/originals/dd/3c/19/dd3c199ddfb447fd0fb697e5c41d523e.png",
       "https://m.media-amazon.com/images/M/MV5BODcxMzVhMzEtYTNiNS00MTcxLThjYTMtNDhlNjY1OWJkYWJhXkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg"],
     [400, 300, 350],
-    [100, 150, 75],
+    [100, 150, 125],
     "The Beast",
     "ipfs://QmRnhnbLeZP2sGA3tewitFSz2uN7XnQqHjL24wUx9yxCEr",
     50000,
@@ -15,10 +15,10 @@ const main = async () => {
   await gameContract.deployed();
   console.log("Contract deployed to:", gameContract.address);
 
-  let txn;
-  txn = await gameContract.mintCharacterNFT(1);
-  await txn.wait();
-  console.log("Minted NFT #1");
+  // let txn;
+  // txn = await gameContract.mintCharacterNFT(1);
+  // await txn.wait();
+  // console.log("Minted NFT #1");
 
   // txn = await gameContract.mintCharacterNFT(1);
   // await txn.wait();
@@ -28,13 +28,13 @@ const main = async () => {
   // await txn.wait();
   // console.log("Minted NFT #3");
 
-  txn = await gameContract.attackBoss();
-  await txn.wait();
+  // txn = await gameContract.attackBoss();
+  // await txn.wait();
 
-  txn = await gameContract.attackBoss();
-  await txn.wait();
+  // txn = await gameContract.attackBoss();
+  // await txn.wait();
 
-  console.log("Done!");
+  // console.log("Done!");
 };
 
 const runMain = async () => {
