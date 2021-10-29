@@ -52,7 +52,7 @@ contract MyEpicGame is ERC721 {
     uint bossHp,
     uint bossAttackDamage
   )
-    ERC721("Pilgrims", "PILGRIM")
+    ERC721("Into the Unknown", "PLAYER")
   {
 
     bigBoss = BigBoss({
@@ -121,7 +121,7 @@ contract MyEpicGame is ERC721 {
               charAttributes.name,
               ' -- NFT #: ',
               Strings.toString(_tokenId),
-              '", "description":"This is an NFT that lets the holder particpate in Metaverse Slayer!", "image": "',
+              '", "description":"This is an NFT that lets you participate in the adventure Into the Unknown", "image": "',
               charAttributes.imageURI,
               '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,',"max_value":',strMaxHp,'}, {"trait_type": "Attack Damage", "value": ',strAttackDamage,'} ]}'
           )

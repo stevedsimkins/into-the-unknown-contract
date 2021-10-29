@@ -2,15 +2,15 @@ const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
   const gameContract = await gameContractFactory.deploy(
     ["Wirt", "Greg", "The Woodsman"],
-    ["https://cdn.weasyl.com/static/media/1e/f3/b4/1ef3b4525b74cb727349c507c9611802fc451690995ca07bacf80998229a290b.jpg",
-      "https://i.pinimg.com/originals/dd/3c/19/dd3c199ddfb447fd0fb697e5c41d523e.png",
-      "https://m.media-amazon.com/images/M/MV5BODcxMzVhMzEtYTNiNS00MTcxLThjYTMtNDhlNjY1OWJkYWJhXkEyXkFqcGdeQXVyNjc3OTE4Nzk@._V1_.jpg"],
+    ["https://gateway.pinata.cloud/ipfs/QmYFAYaxDmwAxgX2HVeUv8QRHagVRYyUFWV7Vs7FiTkkeN",
+      "https://gateway.pinata.cloud/ipfs/QmS8wZQ58EfiBuEJcvEsRWNbToDTXJfdwKvxZ5dspvVZTX",
+      "https://gateway.pinata.cloud/ipfs/Qmaymqi4SpWT4YhRWWWuttX5TwmMvCvXLRv7YFxjFd2xkC"],
     [400, 300, 350],
-    [100, 150, 125],
+    [125, 150, 100],
     "The Beast",
-    "ipfs://QmRnhnbLeZP2sGA3tewitFSz2uN7XnQqHjL24wUx9yxCEr",
+    "https://gateway.pinata.cloud/ipfs/QmRnhnbLeZP2sGA3tewitFSz2uN7XnQqHjL24wUx9yxCEr",
     50000,
-    50
+    75
   );
   await gameContract.deployed();
   console.log("Contract deployed to:", gameContract.address);
