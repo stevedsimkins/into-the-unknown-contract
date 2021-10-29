@@ -2,13 +2,13 @@ const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory("MyEpicGame");
   const gameContract = await gameContractFactory.deploy(
     ["Wirt", "Greg", "The Woodsman"],
-    ["https://gateway.pinata.cloud/ipfs/QmYFAYaxDmwAxgX2HVeUv8QRHagVRYyUFWV7Vs7FiTkkeN",
-      "https://gateway.pinata.cloud/ipfs/QmS8wZQ58EfiBuEJcvEsRWNbToDTXJfdwKvxZ5dspvVZTX",
-      "https://gateway.pinata.cloud/ipfs/Qmaymqi4SpWT4YhRWWWuttX5TwmMvCvXLRv7YFxjFd2xkC"],
+    ["QmYFAYaxDmwAxgX2HVeUv8QRHagVRYyUFWV7Vs7FiTkkeN",
+      "QmS8wZQ58EfiBuEJcvEsRWNbToDTXJfdwKvxZ5dspvVZTX",
+      "Qmaymqi4SpWT4YhRWWWuttX5TwmMvCvXLRv7YFxjFd2xkC"],
     [400, 300, 350],
     [125, 150, 100],
     "The Beast",
-    "https://gateway.pinata.cloud/ipfs/QmRnhnbLeZP2sGA3tewitFSz2uN7XnQqHjL24wUx9yxCEr",
+    "QmRnhnbLeZP2sGA3tewitFSz2uN7XnQqHjL24wUx9yxCEr",
     50000,
     75
   );
